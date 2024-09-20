@@ -3,6 +3,7 @@ import Sidebar from './components/SideBar/SideBar'
 import Bar from './components/Bar/Bar'
 import Graph from './components/Graph/Graph'
 import FormComponent from './components/Form/Form'
+import LoginPage from './pages/LoginPage'
 
 
 interface IAppProps {
@@ -14,6 +15,9 @@ function App({children}: IAppProps) {
 
   return (
     <>
+      <div>
+        <LoginPage />
+      </div>
       <Bar/>
       <Sidebar/>
       <FormComponent/>
