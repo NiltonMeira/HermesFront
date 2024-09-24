@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FormComponent: React.FC = () => {
+const FormComponent = () => {
   const [formData, setFormData] = useState({
     numeroTipo: 'F00R.J02.100',
     codBar: '00000490101',
