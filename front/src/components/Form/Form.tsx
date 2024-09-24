@@ -22,50 +22,50 @@ const FormComponent = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-96 mx-auto mt-10 w-1/4">
-      <h1 className="text-lg font-semibold text-3xl mb-4">Operação: 0001</h1>
+    <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-3/6 h-3/6 mx-auto mt-48 w-1/4">
+      <h1 className="text-4xl font-semibold mb-4">Operação: 0001</h1>
 
       <div className="mb-4">
-        <label className="block text-xl font-medium text-gray-700">Número de tipo</label>
+        <label className="block text-2xl font-medium text-gray-700 mt-8">Número de tipo</label>
         <input
           type="text"
           name="numeroTipo"
           value={formData.numeroTipo}
           onChange={handleChange}
-          className="mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+          className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
-          <label className="block text-xl font-medium text-gray-700">CódBar.</label>
+          <label className="block text-2xl font-medium text-gray-700 mt-6">CódBar.</label>
           <input
             type="text"
             name="codBar"
             value={formData.codBar}
             onChange={handleChange}
-            className="mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+            className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
           />
         </div>
         <div>
-          <label className="block text-xl font-medium text-gray-700">Quantidade</label>
+          <label className="block text-2xl font-medium text-gray-700 mt-6">Quantidade</label>
           <input
             type="text"
             name="quantidade"
             value={formData.quantidade}
             onChange={handleChange}
-            className="mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+            className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
           />
         </div>
       </div>
 
       <div className="mb-4">
-        <label className="block text-xl font-medium text-gray-700">Modelo de Negócio</label>
+        <label className="block text-2xl font-medium text-gray-700 mt-8">Modelo de Negócio</label>
         <select
           name="modeloNegocio"
           value={formData.modeloNegocio}
           onChange={handleChange}
-          className="mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+          className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         >
           <option value="000001">MODELO 000001</option>
           <option value="000023">MODELO 000023</option>
@@ -73,10 +73,7 @@ const FormComponent = () => {
         </select>
       </div>
 
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-xl text-white py-2 rounded-md hover:bg-blue-600 transition duration-300"
-      >
+      <button type="submit" className="w-full bg-blue-500 text-2xl text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-6">
         Cadastrar
       </button>
     </form>

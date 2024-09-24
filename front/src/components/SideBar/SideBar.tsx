@@ -1,6 +1,6 @@
 const SideBar = () => {
   return (
-    <aside className="bg-white h-screen w-28 shadow-lg fixed">
+    <aside className="bg-white h-screen w-28 shadow-lg">
       <div className="flex flex-col items-center justify-center h-full p-4">
       <img src="images/digiexfundo.png" alt="Logo" />
         <ul className="mt-4 space-y-4">
