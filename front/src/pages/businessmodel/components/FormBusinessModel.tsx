@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FormBody = () => {
+const FormBusinessModel = () => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -40,18 +40,7 @@ const FormBody = () => {
       </div>
 
       <div className="mb-4">
-        <label className="block text-2xl font-medium text-gray-700 mt-8">Descrição</label>
-        <input
-          type="text"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-2xl font-medium text-gray-700 mt-8">Número da Peça</label>
+        <label className="block text-2xl font-medium text-gray-700 mt-8">Cliente</label>
         <input
           type="text"
           name="partNumber"
@@ -62,25 +51,14 @@ const FormBody = () => {
       </div>
 
       <div className="mb-4">
-        <label className="block text-2xl font-medium text-gray-700 mt-8">Número da Peça Remanufaturada</label>
+        <label className="block text-2xl font-medium text-gray-700 mt-8">Descrição</label>
         <input
           type="text"
-          name="partNumberReman"
-          value={formData.partNumberReman}
+          name="description"
+          value={formData.description}
           onChange={handleChange}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
-      </div>
-
-      <div className="mb-4 flex items-center">
-        <input
-          type="checkbox"
-          name="isReman"
-          checked={formData.isReman}
-          onChange={handleChange}
-          className="mr-2"
-        />
-        <label className="text-2xl font-medium text-gray-700">Peça Remanufaturada</label>
       </div>
 
       <button type="submit" className="w-full bg-blue-500 text-2xl text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-6">
@@ -90,4 +68,4 @@ const FormBody = () => {
   );
 };
 
-export default FormBody;
+export default FormBusinessModel;
