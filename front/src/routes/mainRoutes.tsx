@@ -3,11 +3,19 @@ import App from "../App";
 import { Home } from "../pages/home/home";
 import OperationPage from "../pages/OperationPage";
 import BodyPage from "../pages/body/BodyPage";
+import LoginPage from "../pages/login/LoginPage";
 
 const MainRoutes = createBrowserRouter([
     {
         path: "/",
         element: 
+        <App>
+            <LoginPage/>
+        </App>
+    },
+    {
+        path: "home",
+        element:
         <App>
             <Home/>
         </App>
