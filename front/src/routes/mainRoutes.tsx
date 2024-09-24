@@ -8,14 +8,14 @@ const MainRoutes = createBrowserRouter([
         path: "/",
         element: 
         <App>
-            <Home/>
+            <LoginPage/>
         </App>
     },
     {
-        path: "login",
+        path: "home",
         element:
         <App>
-            <LoginPage/>
+            <Home/>
         </App>
     }
 ])

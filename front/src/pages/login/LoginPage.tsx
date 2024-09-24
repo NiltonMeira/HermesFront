@@ -31,7 +31,7 @@ const LoginPage = () => {
         console.log(email);
         console.log(password);
 
-        navigate('/')
+        navigate('/home')
       }
     } catch (err) {
       toast.error("Erro ao fazer login")
