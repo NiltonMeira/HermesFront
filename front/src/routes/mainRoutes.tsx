@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { Home } from "../pages/home/home";
 import OperationPage from "../pages/OperationPage";
+import BodyPage from "../pages/body/BodyPage";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -17,6 +18,13 @@ const MainRoutes = createBrowserRouter([
         <App>
             <OperationPage/>
         </App>
+    },
+    {
+        path: "body",
+        element:
+        <App>
+            <BodyPage/>
+        </App> 
     }
 ])
 
