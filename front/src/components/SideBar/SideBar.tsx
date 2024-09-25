@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const SideBar = () => {
   return (
-    <aside className="bg-white h-screen w-28 shadow-lg flex flex-col">
+    <aside className="bg-white  w-28 shadow-lg flex flex-col">
       <div className="pt-4">
         <Link to="/">
           <img src="images/digiexfundo.png" alt="Logo" />

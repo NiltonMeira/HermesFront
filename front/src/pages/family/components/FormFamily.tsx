@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-const FormCore = () => {
+const FormFamily = () => {
   const [formData, setFormData] = useState({
     name: '',
-    description: '',
-//idda fammilia?
+    description: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -24,7 +23,7 @@ const FormCore = () => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-3/6 h-4/4 mx-auto mt-48">
-      <h1 className="text-4xl font-semibold mb-4">Cadastro de Core</h1>
+      <h1 className="text-4xl font-semibold mb-4">Cadastro de Família</h1>
 
       <div className="mb-4">
         <label className="block text-2xl font-medium text-gray-700 mt-8">Nome</label>
@@ -38,10 +37,10 @@ const FormCore = () => {
       </div>
 
       <div className="mb-4">
-        <label className="block text-2xl font-medium text-gray-700 mt-8">ID da família</label>
+        <label className="block text-2xl font-medium text-gray-700 mt-8">ID do produto</label>
         <input
           type="text"
-          name="partNumber"
+          name="productname"
           onChange={handleChange}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
@@ -65,4 +64,4 @@ const FormCore = () => {
   );
 };
 
-export default FormCore;
+export default FormFamily;

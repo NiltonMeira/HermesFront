@@ -26,7 +26,7 @@ const FormBusinessModel = () => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-3/6 h-4/4 mx-auto mt-48">
-      <h1 className="text-4xl font-semibold mb-4">Cadastro de Peça</h1>
+      <h1 className="text-4xl font-semibold mb-4">Cadastro de Componente</h1>
 
       <div className="mb-4">
         <label className="block text-2xl font-medium text-gray-700 mt-8">Nome</label>
