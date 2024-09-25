@@ -28,6 +28,8 @@ const FormSignUp: React.FC = () => {
         }
       });
       toast.success("User created successfully!");
+      console.log(response);
+      
     } catch (err) {
       toast.error("An error occurred while creating the user.");
     }
