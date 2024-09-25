@@ -9,7 +9,7 @@ export const FormFamily = () => {
   const [description, setDescription] = useState("");
   const [productName, setProductname] = useState("");
 
-  let token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
   const getProductByName = async () => {
 
@@ -28,11 +28,12 @@ export const FormFamily = () => {
         const productId = product._id.$oid || product._id;
         setProductId(productId); // Atualiza o estado com o ID correto 
       } else {
-        toast.error("Produto não encontrado");
+        toast.error("Produto não encontrado")
       }
 
     } catch (error) {
-      toast.error("Erro ao buscar o produto");
+      toast.error("Erro ao buscar o produto")
+      console.log(error)
       
     }
   }
@@ -58,6 +59,7 @@ export const FormFamily = () => {
 
     } catch (err) {
       toast.error("An error occurred while creating the family.");
+      console.log(err);
     }
   };
 

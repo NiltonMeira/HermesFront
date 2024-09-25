@@ -9,7 +9,7 @@ const CorePage = () => {
             <div className="flex flex-grow">
                 <SideBar />
                 <main className="flex-grow p-4">
-                    <FormCore />
+                    <FormCore/>
                 </main>
             </div>
         </div>
