@@ -1,24 +1,66 @@
-import React, { useState } from 'react';
+import { FormEventHandler, useState } from 'react';
+import api from '../../../services/api';
+import { toast } from 'react-toastify';
 
-const FormFamily = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    description: ''
-  });
+export const FormFamily = () => {
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, type } = e.target;
-    const value = type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value;
+  const [name, setName] = useState("");
+  const [productId, setProductId] = useState("");
+  const [description, setDescription] = useState("");
+  const [productName, setProductname] = useState("");
 
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  let token = localStorage.getItem("token");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getProductByName = async () => {
+
+    try {
+      
+      const response = await api.get("products", {
+        params: { productName: productName },
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      console.log(response.data[0].id);
+      
+
+      if (response.data && response.data.length > 0) {
+        const product = response.data[0];
+        const productId = product._id.$oid || product._id;
+        setProductId(productId); // Atualiza o estado com o ID correto 
+      } else {
+        toast.error("Produto não encontrado");
+      }
+
+    } catch (error) {
+      toast.error("Erro ao buscar o produto");
+      
+    }
+  }
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    console.log('Dados do formulário:', formData);
+
+    const formValue = {
+      name: name,
+      productId: productId,
+      description: description
+    };
+
+    try {
+      const response = await api.post("family", formValue, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      toast.success("Family created successfully!");
+      console.log(response);
+
+    } catch (err) {
+      toast.error("An error occurred while creating the family.");
+    }
   };
 
   return (
@@ -30,18 +72,20 @@ const FormFamily = () => {
         <input
           type="text"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
 
       <div className="mb-4">
-        <label className="block text-2xl font-medium text-gray-700 mt-8">ID do produto</label>
+        <label className="block text-2xl font-medium text-gray-700 mt-8">Nome do produto</label>
         <input
           type="text"
           name="productname"
-          onChange={handleChange}
+          value={productName}
+          onChange={(e) => setProductname(e.target.value)}
+          onBlur={getProductByName} 
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
@@ -51,8 +95,8 @@ const FormFamily = () => {
         <input
           type="text"
           name="description"
-          value={formData.description}
-          onChange={handleChange}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
@@ -63,5 +107,3 @@ const FormFamily = () => {
     </form>
   );
 };
-
-export default FormFamily;

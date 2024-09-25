@@ -1,6 +1,6 @@
 import Bar from "../../components/Bar/Bar";
 import SideBar from "../../components/SideBar/SideBar";
-import FormFamily from "./components/FormFamily";
+import { FormFamily } from "./components/FormFamily";
 
 const CorePage = () => {
     return (
