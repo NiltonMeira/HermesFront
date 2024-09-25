@@ -14,7 +14,6 @@ export const FormFamily = () => {
   const getProductByName = async () => {
 
     try {
-      
       const response = await api.get("products", {
         params: { productName: productName },
         headers: {
@@ -24,7 +23,6 @@ export const FormFamily = () => {
 
       console.log(response.data[0].id);
       
-
       if (response.data && response.data.length > 0) {
         const product = response.data[0];
         const productId = product._id.$oid || product._id;
