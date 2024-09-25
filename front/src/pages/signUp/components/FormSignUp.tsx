@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
+import React, { FormEventHandler, useState } from 'react';
+import api from '../../../services/api';
+import { toast } from 'react-toastify';
 
 const FormSignUp: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    description: '',
-    partNumber: '',
-    partNumberReman: '',
-    isReman: false,
-  });
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [edv, setEdv] = useState("")
+  const [password, setPassword] = useState("")
+  const [checkPassword, setCheckPassword] = useState("")
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, type } = e.target;
-    const value = type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value;
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault()
 
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+    let token = localStorage.getItem("token")
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Dados do formulário:', formData);
-  };
+    const formValue = {
+      name: name,
+      email: email,
+      edv: edv,
+      password: password
+    }
+
+    try {
+      const response = await api.post("users", formValue, {
+        headers: {
+          Authorization: `Bearer ${token}` 
+        }
+      });
+      toast.success("User created successfully!");
+    } catch (err) {
+      toast.error("An error occurred while creating the user.");
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-3/6 h-4/4 mx-auto mt-48">
@@ -33,8 +42,8 @@ const FormSignUp: React.FC = () => {
         <input
           type="text"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
@@ -44,8 +53,8 @@ const FormSignUp: React.FC = () => {
         <input
           type="text"
           name="description"
-          value={formData.description}
-          onChange={handleChange}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
@@ -55,8 +64,8 @@ const FormSignUp: React.FC = () => {
         <input
           type="text"
           name="partNumber"
-          value={formData.partNumber}
-          onChange={handleChange}
+          value={edv}
+          onChange={(e) => setEdv(e.target.value)}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
@@ -66,8 +75,8 @@ const FormSignUp: React.FC = () => {
         <input
           type="text"
           name="partNumberReman"
-          value={formData.partNumberReman}
-          onChange={handleChange}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
@@ -77,13 +86,13 @@ const FormSignUp: React.FC = () => {
         <input
           type="text"
           name="partNumberReman"
-          value={formData.partNumberReman}
-          onChange={handleChange}
+          value={checkPassword}
+          onChange={(e) => setCheckPassword(e.target.value)}
           className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
         />
       </div>
 
-      
+
 
       <button type="submit" className="w-full bg-blue-500 text-2xl text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-6">
         Cadastrar
@@ -93,3 +102,4 @@ const FormSignUp: React.FC = () => {
 };
 
 export default FormSignUp;
+''
