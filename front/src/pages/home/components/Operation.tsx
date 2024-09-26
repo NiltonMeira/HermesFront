@@ -26,14 +26,42 @@ export const Operation = () => {
                     to={""}
                     className="flex justify-center flex-col items-center border-gray-500 border-2 rounded-md w-36 h-36 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700"
                 >
-                    <h1 className="text-2xl">Entrada</h1>
+                    <h1 className="text-2xl">Produtos</h1>
                     <img src="images/carrinho.png" className="w-20" />
                 </Link>
                 <Link
                     to={""}
                     className="flex justify-center flex-col items-center border-gray-500 border-2 rounded-md w-36 h-36 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700"
                 >
-                    <h1 className="text-2xl">Saída</h1>
+                    <h1 className="text-2xl">Familias</h1>
+                    <img src="images/carrinho.png" className="w-20" />
+                </Link>
+                <Link
+                    to={""}
+                    className="flex justify-center flex-col items-center border-gray-500 border-2 rounded-md w-36 h-36 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700"
+                >
+                    <h1 className="text-2xl">Cores</h1>
+                    <img src="images/carrinho.png" className="w-20" />
+                </Link>
+                <Link
+                    to={""}
+                    className="flex justify-center flex-col items-center border-gray-500 border-2 rounded-md w-36 h-36 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700"
+                >
+                    <h1 className="text-2xl">Reman</h1>
+                    <img src="images/carrinho.png" className="w-20" />
+                </Link>
+                <Link
+                    to={""}
+                    className="flex justify-center flex-col items-center border-gray-500 border-2 rounded-md w-36 h-36 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700"
+                >
+                    <h1 className="text-xl">Componentes</h1>
+                    <img src="images/carrinho.png" className="w-20" />
+                </Link>
+                <Link
+                    to={""}
+                    className="flex justify-center flex-col items-center border-gray-500 border-2 rounded-md w-36 h-36 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700"
+                >
+                    <h1 className="text-2xl">Corpos</h1>
                     <img src="images/carrinho.png" className="w-20" />
                 </Link>
             </div>
