@@ -1,20 +1,21 @@
 import { FormEventHandler, useState } from 'react';
 import api from '../../../services/api';
 import { toast } from 'react-toastify';
+import { Box, Button, TextField, Typography } from '@mui/material';
 
 const FormProduct = () => {
-  const [name, setName] = useState("")
-  const [description, setDescription] = useState("")
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
 
     const formValue = {
       name: name,
       description: description
-    }
+    };
 
     try {
       const response = await api.post("products", formValue, {
@@ -22,46 +23,63 @@ const FormProduct = () => {
           Authorization: `Bearer ${token}` 
         }
       });
-      toast.success("User created successfully!");
+      toast.success("Produto criado com sucesso!");
       console.log(response);
-      
     } catch (err) {
-      toast.error("An error occurred while creating the user.");
+      toast.error("Ocorreu um erro ao criar o produto.");
       console.log(err);
-      
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-3/6 h-4/4 mx-auto mt-48">
-      <h1 className="text-4xl font-semibold mb-4">Cadastro de Produto</h1>
+    <Box 
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        bgcolor: 'background.paper',
+        p: 4,
+        borderRadius: 2,
+        maxWidth: 500,
+        mx: 'auto',
+        mt: 4,
+        boxShadow: 3,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2
+      }}
+    >
+      <Typography variant="h4" component="h1" gutterBottom>
+        Cadastro de Produto
+      </Typography>
 
-      <div className="mb-4">
-        <label className="block text-2xl font-medium text-gray-700 mt-8">Nome</label>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
-        />
-      </div>
+      <TextField
+        label="Nome"
+        variant="outlined"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        fullWidth
+        required
+      />
 
-      <div className="mb-4">
-        <label className="block text-2xl font-medium text-gray-700 mt-8">Descrição</label>
-        <input
-          type="text"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="h-8 mt-1 block w-full text-lg rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
-        />
-      </div>
+      <TextField
+        label="Descrição"
+        variant="outlined"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        fullWidth
+        required
+      />
 
-      <button type="submit" className="w-full bg-blue-500 text-2xl text-white py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-6">
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        size="large"
+        sx={{ mt: 2 }}
+      >
         Cadastrar
-      </button>
-    </form>
+      </Button>
+    </Box>
   );
 };
 

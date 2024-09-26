@@ -13,7 +13,7 @@ const SideBar = () => {
         <ul className="space-y-7">
           <li>
             {/* esse link faz a logo retornar para a home */}
-            <Link to="/"> 
+            <Link to="/home"> 
               <button className="pb-10 flex items-center justify-center w-full h-16 bg-transparent hover:bg-gray-200 rounded">
                 <img src="images/home.svg" className='w-16' alt="Home" />
               </button>
