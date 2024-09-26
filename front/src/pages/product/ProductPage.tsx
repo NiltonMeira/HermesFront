@@ -1,6 +1,6 @@
 import Bar from "../../components/Bar/Bar";
 import SideBar from "../../components/SideBar/SideBar";
-import FormProduct from "./components/FormPorduct";
+import { BasicTable } from "./components/basicTable";
 
 const CorePage = () => {
     return (
@@ -9,7 +9,7 @@ const CorePage = () => {
             <div className="flex flex-grow">
                 <SideBar />
                 <main className="flex-grow p-4">
-                    <FormProduct />
+                    <BasicTable/>
                 </main>
             </div>
         </div>

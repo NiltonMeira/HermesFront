@@ -6,10 +6,10 @@ const FormProduct = () => {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {0
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
-    let token = localStorage.getItem("token")
+    const token = localStorage.getItem("token")
 
     const formValue = {
       name: name,
@@ -27,6 +27,8 @@ const FormProduct = () => {
       
     } catch (err) {
       toast.error("An error occurred while creating the user.");
+      console.log(err);
+      
     }
   };
 

@@ -23,7 +23,7 @@ export const Operation = () => {
             <h1 className="text-3xl">Componentes</h1>
             <div className="flex justify-center gap-5">
                 <Link
-                    to={""}
+                    to={"../product"}
                     className="flex justify-center flex-col items-center border-gray-500 border-2 rounded-md w-36 h-36 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700"
                 >
                     <h1 className="text-2xl">Produtos</h1>
