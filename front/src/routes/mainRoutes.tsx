@@ -9,6 +9,7 @@ import ProductPage from "../pages/product/ProductPage";
 import FamilyPage from "../pages/family/FamilyPage";
 import { SignUp } from "../pages/signUp/SignUp";
 import BodyPage from "../pages/body/bodyPage";
+import { Dashboard } from "../pages/dashboard/dashboardPage";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -73,6 +74,13 @@ const MainRoutes = createBrowserRouter([
         <App>
             <FamilyPage/>
         </App> 
+    },
+    {
+        path: "dashboard",
+        element:
+        <App>
+            <Dashboard/>
+        </App>
     }
 ])
 

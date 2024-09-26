@@ -22,7 +22,7 @@ const FormComponent = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-3/6 h-3/6 mx-auto mt-48 w-1/4">
+    <form onSubmit={handleSubmit} className="bg-gray-200 p-6 rounded-md w-3/6 h-4/7 mx-auto mt-48 w-1/4">
       <h1 className="text-4xl font-semibold mb-4">Operação: 0001</h1>
 
       <div className="mb-4">
