@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import api from "../../../services/api"
 import { toast } from "react-toastify"
 import { Button, Modal, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box } from "@mui/material"
-import { Link } from "react-router-dom"
 import FormProduct from "./FormPorduct"
 
 export const BasicTable = () => {
@@ -21,6 +20,7 @@ export const BasicTable = () => {
         return { name, description }
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const getData = async () => {
         try {
             const response = await api.get("products", {
@@ -48,7 +48,7 @@ export const BasicTable = () => {
     const handleCloseModal = () => setOpenModal(false)
 
     return (
-        <>  
+        <>
             <div className="flex justify-end mb-4">
                 <Button
                     variant="contained"

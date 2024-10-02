@@ -74,7 +74,21 @@ export const Operation = () => {
                     <h2 className="text-xl font-semibold">Corpos</h2>
                     <img src="images/CRIN.svg" className="w-20 mt-2" alt="Corpos" />
                 </Link>
+
+                
             </div>
+
+            <h1 className="text-4xl font-bold text-gray-800">Adm</h1>
+
+            <div className="grid grid-cols-3 gap-8">
+                <Link
+                    to={"../product"}
+                    className="flex flex-col items-center justify-center border-gray-300 border-2 rounded-xl w-40 h-40 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700 hover:shadow-lg"
+                >
+                    <h2 className="text-xl font-semibold">Users</h2>
+                    <img src="images/user.png" className="w-20 mt-2" alt="Produtos" />
+                </Link>
+            </div>  
         </div>
     )
 }
