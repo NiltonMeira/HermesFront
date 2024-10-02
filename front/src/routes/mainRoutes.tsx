@@ -9,6 +9,7 @@ import ProductPage from "../pages/product/ProductPage";
 import FamilyPage from "../pages/family/FamilyPage";
 import { SignUp } from "../pages/signUp/SignUp";
 import BodyPage from "../pages/body/bodyPage";
+import { UserPage } from "../pages/user/userPage";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -73,6 +74,13 @@ const MainRoutes = createBrowserRouter([
         <App>
             <FamilyPage/>
         </App> 
+    },
+    {
+        path: "user",
+        element:
+        <App>
+            <UserPage/>
+        </App>
     }
 ])
 

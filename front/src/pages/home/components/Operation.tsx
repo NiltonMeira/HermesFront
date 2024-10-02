@@ -82,7 +82,7 @@ export const Operation = () => {
 
             <div className="grid grid-cols-3 gap-8">
                 <Link
-                    to={"../product"}
+                    to={"../user"}
                     className="flex flex-col items-center justify-center border-gray-300 border-2 rounded-xl w-40 h-40 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700 hover:shadow-lg"
                 >
                     <h2 className="text-xl font-semibold">Users</h2>
