@@ -8,7 +8,7 @@ const OperationPage = () => {
             <Bar />
             <div className="flex flex-grow">
                 <SideBar />
-                <main className="flex-grow p-4">
+                <main className="flex flex-grow justify-center items-center p-4">
                     <FormComponent />
                 </main>
             </div>

@@ -40,21 +40,21 @@ export const Operation = () => {
                     <img src="images/CRIN.svg" className="w-20 mt-2" alt="Produtos" />
                 </Link>
                 <Link
-                    to={""}
+                    to={"../family"}
                     className="flex flex-col items-center justify-center border-gray-300 border-2 rounded-xl w-40 h-40 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700 hover:shadow-lg"
                 >
                     <h2 className="text-xl font-semibold">Famílias</h2>
                     <img src="images/family.svg" className="w-20 mt-2" alt="Famílias" />
                 </Link>
                 <Link
-                    to={""}
+                    to={"../core"}
                     className="flex flex-col items-center justify-center border-gray-300 border-2 rounded-xl w-40 h-40 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700 hover:shadow-lg"
                 >
                     <h2 className="text-xl font-semibold">Cores</h2>
                     <img src="images/CRIN.svg" className="w-20 mt-2" alt="Cores" />
                 </Link>
                 <Link
-                    to={""}
+                    to={"../"}
                     className="flex flex-col items-center justify-center border-gray-300 border-2 rounded-xl w-40 h-40 hover:scale-105 transition-transform duration-300 ease-in-out hover:border-gray-700 hover:shadow-lg"
                 >
                     <h2 className="text-xl font-semibold">Reman</h2>
